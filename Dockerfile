@@ -4,10 +4,7 @@ FROM python:3.11-slim
 WORKDIR /app
 
 # Install system dependencies required for pycryptodome and other builds
-RUN apt-get update && apt-get install -y \
-    gcc \
-    libffi-dev \
-    && rm -rf /var/lib/apt/lists/*
+RUN apt-get update && apt-get install -y gcc libffi-dev && rm -rf /var/lib/apt/lists/*
 
 # Copy requirements and install Python dependencies
 COPY requirements.txt .
